@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modal Verbs: The Survival Guide</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.5;
+    padding: 20px;
+  }
+  
+  .page {
+    max-width: 210mm;
+    margin: 0 auto;
+    background: white;
+    padding: 30px 35px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #1a1a1a;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
+  }
+  
+  .header .subtitle {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .block {
+    margin-bottom: 22px;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  
+  .block-1 { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left: 5px solid #0ea5e9; }
+  .block-2 { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); border-left: 5px solid #a855f7; }
+  .block-3 { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; }
+  
+  .block-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .block-1 .block-title { color: #0369a1; }
+  .block-2 .block-title { color: #7e22ce; }
+  .block-3 .block-title { color: #b45309; }
+  
+  .block-subtitle {
+    font-size: 11px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.7);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 12.5px;
+  }
+  
+  th {
+    background: rgba(0,0,0,0.08);
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    vertical-align: top;
+  }
+  
+  tr:last-child td { border-bottom: none; }
+  
+  .modal-word {
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    background: rgba(0,0,0,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+  
+  .paraphrase {
+    font-style: italic;
+    color: #555;
+    font-size: 11.5px;
+  }
+  
+  .vs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .vs-card {
+    background: rgba(255,255,255,0.75);
+    padding: 12px 14px;
+    border-radius: 8px;
+    border-top: 3px solid #a855f7;
+  }
+  
+  .vs-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #7e22ce;
+  }
+  
+  .vs-card p {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  
+  .vs-card .example {
+    font-size: 11.5px;
+    color: #555;
+    font-style: italic;
+    margin-top: 4px;
+  }
+  
+  .trap-box {
+    background: rgba(239, 68, 68, 0.12);
+    border-left: 4px solid #ef4444;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  
+  .trap-box strong { color: #b91c1c; }
+  
+  .footer-note {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 15px;
+    letter-spacing: 1px;
+  }
+
+   .vs-section {
+     margin-bottom: 20px;
+     background: rgba(255,255,255,0.75);
+     padding: 16px 18px;
+     border-radius: 10px;
+     border-top: 4px solid #a855f7;
+   }
+
+  .vs-heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: #7e22ce;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .vs-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .vs-item {
+    padding: 0;
+  }
+
+  .vs-label {
+    font-size: 15px;
+    font-weight: 800;
+    color: #7e22ce;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #e9d5ff;
+    letter-spacing: 0.5px;
+  }
+
+  .vs-meaning {
+    margin-bottom: 10px;
+  }
+
+  .vs-type {
+    display: inline-block;
+    background: #a855f7;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+  }
+
+  .vs-desc {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+
+  .vs-limitation {
+    font-size: 11px;
+    color: #dc2626;
+    font-weight: 600;
+    margin-top: 6px;
+    padding: 4px 8px;
+    background: rgba(220, 38, 38, 0.08);
+    border-radius: 4px;
+    border-left: 3px solid #dc2626;
+  }
+
+  .vs-example {
+    background: rgba(0,0,0,0.04);
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+  }
+
+  .example-label {
+    font-weight: 700;
+    font-size: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .vs-example p {
+    margin: 4px 0;
+    color: #1a1a1a;
+    line-height: 1.4;
+  }
+
+  .vs-example i {
+    color: #666;
+    font-size: 11px;
+  }
+
+  .vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    color: #a855f7;
+    padding: 0 4px;
+  }
+
+  .trap-box {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .trap-box strong {
+    color: #b91c1c;
+    font-weight: 700;
+  }
+
+  .trap-examples {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .trap-examples div {
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  .trap-examples b {
+    font-weight: 700;
+  }
+
+  .trap-examples i {
+    color: #555;
+    font-size: 11px;
+  }
+
+  .logo-placeholder {
+    width: 200px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-image: url('./assets/my_logo.png');
+    background-position: center center;
+    background-size: cover;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; padding: 15mm; }
+    .block { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  
+  <div class="header">
+    <h1>MODAL VERBS</h1>
+    <div class="subtitle">The Survival Guide</div>
+  </div>
+  
+  <!-- BLOCK 1 -->
+  <div class="block block-1">
+    <div class="block-title">🟦 BLOCK 1 · THE CORE MATRIX</div>
+    <div class="block-subtitle">How to decode what you really want to say.</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Function</th>
+          <th>Paraphrase / Trigger</th>
+          <th>Modal</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Obligation / Rule</b></td>
+          <td class="paraphrase">it's a rule / it's necessary</td>
+          <td><span class="modal-word">must / have to</span></td>
+          <td>You <b>must</b> wear a uniform.</td>
+        </tr>
+        <tr>
+          <td><b>Prohibition</b></td>
+          <td class="paraphrase">it's forbidden</td>
+          <td><span class="modal-word">mustn't</span></td>
+          <td>You <b>mustn't</b> bring pets to class.</td>
+        </tr>
+        <tr>
+          <td><b>No Obligation</b></td>
+          <td class="paraphrase">it isn't necessary</td>
+          <td><span class="modal-word">don't have to / needn't</span></td>
+          <td>You <b>don't have to</b> pay for it.</td>
+        </tr>
+        <tr>
+          <td><b>Advice</b></td>
+          <td class="paraphrase">it's a good thing to</td>
+          <td><span class="modal-word">should / ought to</span></td>
+          <td>You <b>should</b> revise for the test.</td>
+        </tr>
+        <tr>
+          <td><b>Permission</b></td>
+          <td class="paraphrase">you're allowed</td>
+          <td><span class="modal-word">can / may</span></td>
+          <td>You <b>can</b> choose any class.</td>
+        </tr>
+        <tr>
+          <td><b>Possibility</b></td>
+          <td class="paraphrase">it's possible</td>
+          <td><span class="modal-word">may / might / could</span></td>
+          <td>It <b>may</b> rain later.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- BLOCK 2 -->
+  <div class="block block-2">
+    <div class="block-title">🟪 BLOCK 2 · THE "VS" BATTLES</div>
+    <div class="block-subtitle">The most common traps. Choose your fighter wisely.</div>
+
+    <!-- MUST vs HAVE TO -->
+    <div class="vs-section">
+      <h3 class="vs-heading">⚔️ MUST vs HAVE TO</h3>
+      <div class="vs-comparison">
+        <div class="vs-item">
+          <div class="vs-label">MUST</div>
+          <div class="vs-meaning">
+            <span class="vs-type">Internal obligation</span>
+            <p class="vs-desc">The speaker thinks it's important. Personal feeling or strong recommendation.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Example:</span>
+            <p>I <b>must</b> call my mom. <i>(I feel it's important)</i></p>
+          </div>
+        </div>
+
+        <div class="vs-divider">VS</div>
+
+        <div class="vs-item">
+          <div class="vs-label">HAVE TO</div>
+          <div class="vs-meaning">
+            <span class="vs-type">External obligation</span>
+            <p class="vs-desc">Rules, laws, boss, or situation force you. No personal choice.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Example:</span>
+            <p>I <b>have to</b> wear a uniform. <i>(It's the school rule)</i></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="trap-box">
+        ⚠️ <strong>THE NEGATIVE TRAP:</strong> They change completely in negative form!<br>
+        <div class="trap-examples">
+          <div><b>MUSTN'T</b> = It's forbidden! 🚫 <i>(You mustn't smoke here.)</i></div>
+          <div><b>DON'T HAVE TO</b> = It's not necessary. You can if you want. ✅ <i>(You don't have to pay, it's free.)</i></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAN vs BE ABLE TO -->
+    <div class="vs-section">
+      <h3 class="vs-heading">⚔️ CAN vs BE ABLE TO</h3>
+      <div class="vs-comparison">
+        <div class="vs-item">
+          <div class="vs-label">CAN</div>
+          <div class="vs-meaning">
+            <span class="vs-type">General ability</span>
+            <p class="vs-desc">Use for Present and Past (could). Describes a skill or regular capability.</p>
+            <p class="vs-limitation"><b>Limitation:</b> No Future form, no Perfect tenses.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Examples:</span>
+            <p>I <b>can</b> swim. <i>(Present ability)</i></p>
+            <p>I <b>could</b> swim when I was 5. <i>(Past general ability)</i></p>
+          </div>
+        </div>
+
+        <div class="vs-divider">VS</div>
+
+        <div class="vs-item">
+          <div class="vs-label">BE ABLE TO</div>
+          <div class="vs-meaning">
+            <span class="vs-type">Universal backup + Specific achievement</span>
+            <p class="vs-desc">Use when CAN doesn't exist (Future, Perfect) OR for a specific difficult achievement in the past.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Examples:</span>
+            <p>I <b>will be able to</b> help you tomorrow. <i>(Future - CAN has no future form)</i></p>
+            <p>After 3 hours, I <b>was able to</b> fix the computer. <i>(Specific achievement, not "could fix")</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- BLOCK 3 -->
+  <div class="block block-3">
+    <div class="block-title">🟧 BLOCK 3 · TIME TRAVEL (Perfect Modals)</div>
+    <div class="block-subtitle">Modal + HAVE + V3 · How to talk about the past.</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Meaning</th>
+          <th>Paraphrase / Trigger</th>
+          <th>Structure</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Logical Certainty</b></td>
+          <td class="paraphrase">I'm certain that it happened</td>
+          <td><span class="modal-word">must have + V3</span></td>
+          <td>She <b>must have forgotten</b> her keys.</td>
+        </tr>
+        <tr>
+          <td><b>Logical Impossibility</b></td>
+          <td class="paraphrase">it isn't possible that it happened</td>
+          <td><span class="modal-word">can't have + V3</span></td>
+          <td>He <b>can't have stolen</b> it.</td>
+        </tr>
+        <tr>
+          <td><b>Past Possibility</b></td>
+          <td class="paraphrase">it's possible that it happened</td>
+          <td><span class="modal-word">might/may/could have + V3</span></td>
+          <td>They <b>might have missed</b> the bus.</td>
+        </tr>
+        <tr>
+          <td><b>Regret / Criticism</b></td>
+          <td class="paraphrase">it was wrong not to do it</td>
+          <td><span class="modal-word">should have + V3</span></td>
+          <td>You <b>should have revised</b> more.</td>
+        </tr>
+        <tr>
+          <td><b>Wasted Effort</b></td>
+          <td class="paraphrase">it wasn't necessary (but you did it)</td>
+          <td><span class="modal-word">needn't have + V3</span></td>
+          <td>You <b>needn't have cooked</b> dinner.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="footer-note">MODAL VERBS · SURVIVAL GUIDE · 2026</div>
+  <div class="footer">
+    <div class="logo-placeholder"></div>
+  </div>
+  
+</div>
+</body>
+</html>
