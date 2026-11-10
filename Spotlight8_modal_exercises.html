@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Verbs: Practice Exercises</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 25px 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #1a1a1a;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 12px;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .exercise {
+            margin-bottom: 22px;
+            padding: 16px 18px;
+            border-radius: 10px;
+            page-break-inside: avoid;
+        }
+
+        .ex-1 { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border-left: 5px solid #0ea5e9; }
+        .ex-2 { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); border-left: 5px solid #a855f7; }
+        .ex-3 { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; }
+        .ex-4 { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 5px solid #10b981; }
+
+        .ex-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ex-1 .ex-title { color: #0369a1; }
+        .ex-2 .ex-title { color: #7e22ce; }
+        .ex-3 .ex-title { color: #b45309; }
+        .ex-4 .ex-title { color: #047857; }
+
+        .ex-instruction {
+            font-size: 11px;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .question {
+            background: rgba(255,255,255,0.8);
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            font-size: 12.5px;
+        }
+
+        .question-number {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-right: 6px;
+        }
+
+        .options {
+            display: inline;
+            font-weight: 600;
+        }
+
+        .answer-line {
+            display: block;
+            margin-top: 6px;
+            padding-left: 20px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .answer-line::before {
+            content: "→ ";
+            font-weight: 700;
+        }
+
+        .speaking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .speaking-card {
+            background: rgba(255,255,255,0.9);
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .speaking-card .category {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #047857;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .speaking-card .scenario {
+            font-size: 12px;
+            color: #1a1a1a;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .speaking-card .target {
+            font-size: 10px;
+            color: #666;
+            background: rgba(0,0,0,0.04);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .speaking-card .example-answer {
+            margin-top: 10px;
+            padding: 8px 10px;
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid #10b981;
+            border-radius: 0 4px 4px 0;
+            font-size: 11.5px;
+            font-style: italic;
+            color: #065f46;
+        }
+
+        .answer-key h2 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #374151;
+            text-align: center;
+        }
+
+        .answer-section h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4b5563;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #d1d5db;
+            padding-bottom: 4px;
+        }
+
+        .answer-item b {
+            color: #059669;
+            font-weight: 700;
+        }
+
+        /* Новые цвета для упражнений 5 и 6 */
+        .ex-5 { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); border-left: 5px solid #a855f7; }
+        .ex-6 { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; }
+
+        .ex-5 .ex-title { color: #7e22ce; }
+        .ex-6 .ex-title { color: #b45309; }
+
+        /* Пустая линия для вставки ответа */
+        .blank {
+            display: inline-block;
+            min-width: 110px;
+            border-bottom: 2px solid #999;
+            margin: 0 6px;
+            vertical-align: bottom;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; padding: 15mm; }
+            .exercise { page-break-inside: avoid; }
+            .answer-key { page-break-before: always; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>📝 MODAL VERBS: PRACTICE</h1>
+        <div class="subtitle">8th Grade · Exercises 1-4</div>
+    </div>
+
+    <!-- EXERCISE 1 -->
+    <div class="exercise ex-1">
+        <div class="ex-title">🔵 Exercise 1 · Choose the Correct Modal</div>
+        <div class="ex-instruction">Circle the right option. Pay attention to the paraphrase in brackets!</div>
+
+        <div class="question">
+            <span class="question-number">1.</span>
+            You <span class="options">mustn't / don't have to</span> use your phone during the exam. <i>(it's forbidden)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">2.</span>
+            You <span class="options">mustn't / don't have to</span> wear a uniform tomorrow. <i>(it isn't necessary)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">3.</span>
+            You <span class="options">should / must</span> revise more if you want to pass. <i>(it's a good idea)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">4.</span>
+            You <span class="options">should / must</span> stop when the traffic light is red. <i>(it's the law)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">5.</span>
+            She <span class="options">can't / mustn't</span> be at home. Her car isn't in the driveway. <i>(deduction)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">6.</span>
+            You <span class="options">needn't / mustn't</span> bring food. We have plenty. <i>(it isn't necessary)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">7.</span>
+            Students <span class="options">can / may</span> borrow books from the library. <i>(permission)</i>
+        </div>
+        <div class="question">
+            <span class="question-number">8.</span>
+            He <span class="options">should / must</span> see a doctor. His headache is terrible. <i>(strong advice)</i>
+        </div>
+    </div>
+
+    <!-- EXERCISE 2 -->
+    <div class="exercise ex-2">
+        <div class="ex-title">🟣 Exercise 2 · Paraphrasing</div>
+        <div class="ex-instruction">Rewrite using an appropriate modal verb. Use the paraphrase as a clue!</div>
+
+        <div class="question">
+            <span class="question-number">1.</span> <b>It's possible</b> it'll rain later.
+            <span class="answer-line">It <b>may</b> rain later.</span>
+        </div>
+        <div class="question">
+            <span class="question-number">2.</span> <b>It's necessary</b> to talk to the headmaster.
+            <span class="answer-line">You _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">3.</span> <b>It's forbidden</b> to bring pets into the classroom!
+            <span class="answer-line">You _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">4.</span> <b>It isn't necessary</b> for you to finish the project by Wednesday.
+            <span class="answer-line">You _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">5.</span> <b>Always wear a uniform, it's a rule.</b>
+            <span class="answer-line">You _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">6.</span> <b>It's a good thing to</b> revise for a test over the weekend.
+            <span class="answer-line">You _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">7.</span> <b>Everybody is obliged to</b> hand in their homework on time.
+            <span class="answer-line">Students _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">8.</span> <b>It's possible</b> that she forgot about the meeting.
+            <span class="answer-line">She _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">9.</span> <b>I'm certain</b> he is tired after the trip.
+            <span class="answer-line">He _________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">10.</span> <b>It wasn't necessary</b> to wait for me.
+            <span class="answer-line">You _________________________________</span>
+        </div>
+    </div>
+
+    <!-- EXERCISE 3 -->
+    <div class="exercise ex-3">
+        <div class="ex-title">🟡 Exercise 3 · Error Correction</div>
+        <div class="ex-instruction">Each sentence has ONE mistake. Find and correct it. If the sentence is correct, write "✓".</div>
+
+        <div class="question">
+            <span class="question-number">1.</span> You mustn't pay for the course. It's free.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">2.</span> She can't be at home because the lights are on.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">3.</span> You should have called me yesterday, but you didn't.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">4.</span> If you feel sick, you must to see a doctor.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">5.</span> You mustn't worry about the test. It's very easy.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">6.</span> He can't have passed the exam. He studied really hard.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">7.</span> You needn't to bring your own laptop. We have computers.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+        <div class="question">
+            <span class="question-number">8.</span> She must have been very tired yesterday.
+            <span class="answer-line">_________________________________________</span>
+        </div>
+    </div>
+
+    <!-- EXERCISE 4: MUST vs HAVE TO -->
+    <div class="exercise ex-4">
+        <div class="ex-title">🔵 Exercise 4 · MUST vs HAVE TO</div>
+        <div class="ex-instruction">Fill in <b>must</b>, <b>mustn't</b>, <b>have to</b>, or <b>don't have to</b>. Use the context clue in brackets!</div>
+
+        <div class="question">
+            <span class="question-number">1.</span>
+            I <span class="blank"></span> call my mom tonight. <i>(I feel it's important — internal obligation)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">2.</span>
+            Students <span class="blank"></span> wear uniforms at this school. <i>(it's the school rule — external obligation)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">3.</span>
+            You <span class="blank"></span> smoke inside the hospital. <i>(it's strictly forbidden — negative of must)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">4.</span>
+            You <span class="blank"></span> come early tomorrow. It's a day off. <i>(it's not necessary — negative of have to)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">5.</span>
+            I <span class="blank"></span> finish this report today. <i>(my boss told me to — external pressure)</i>
+        </div>
+    </div>
+
+    <!-- EXERCISE 5: CAN vs BE ABLE TO -->
+    <div class="exercise ex-5">
+        <div class="ex-title">🟣 Exercise 5 · CAN vs BE ABLE TO</div>
+        <div class="ex-instruction">Fill in the correct form: <b>can / could / be able to</b>. Pay attention to the tense and type of ability!</div>
+
+        <div class="question">
+            <span class="question-number">1.</span>
+            I <span class="blank"></span> swim when I was five years old. <i>(general ability in the past)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">2.</span>
+            After months of training, I finally <span class="blank"></span> run 10 km. <i>(specific achievement in the past)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">3.</span>
+            I <span class="blank"></span> help you with the project tomorrow. <i>(future ability — "can" has no future form!)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">4.</span>
+            She <span class="blank"></span> speak three languages fluently. <i>(general present ability)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">5.</span>
+            Despite the noise, I <span class="blank"></span> to finish the exam on time. <i>(specific past achievement — note the "to"!)</i>
+        </div>
+    </div>
+
+    <!-- EXERCISE 6: MAY vs MIGHT vs COULD -->
+    <div class="exercise ex-6">
+        <div class="ex-title">🟡 Exercise 6 · MAY vs MIGHT vs COULD</div>
+        <div class="ex-instruction">Choose the best modal verb. Think: is it a real chance, a doubt, or just an option?</div>
+
+        <div class="question">
+            <span class="question-number">1.</span>
+            Take an umbrella. It <span class="blank"></span> rain later. <i>(real possibility ~50% — weather forecast)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">2.</span>
+            I <span class="blank"></span> come to the party, but I'm really tired. <i>(small chance ~20-30% — don't count on it)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">3.</span>
+            We <span class="blank"></span> order pizza, or we <span class="blank"></span> cook pasta. <i>(discussing options, not chances)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">4.</span>
+            Hurry up! The bus <span class="blank"></span> leave any minute. <i>(real, factual possibility)</i>
+        </div>
+
+        <div class="question">
+            <span class="question-number">5.</span>
+            I <span class="blank"></span> stay home tonight. I've had a long day. <i>(doubtful, remote possibility — I'm leaning towards staying)</i>
+        </div>
+    </div>
+
+    <!-- EXERCISE 4 (UPDATED: Text-based scenarios) -->
+    <div class="exercise ex-4">
+        <div class="ex-title">🟢 Exercise 7 · Speaking Practice: Real-Life Scenarios</div>
+        <div class="ex-instruction">Read the situation. What would you say using a modal verb? Work in pairs!</div>
+
+        <div class="speaking-grid">
+            <div class="speaking-card">
+                <div class="category">🚫 Rules & Prohibition</div>
+                <div class="scenario">You are in the school chemistry lab. There are dangerous chemicals on the tables. Your friend takes out a sandwich to eat.</div>
+                <div class="target"><b>Target:</b> mustn't</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="category">💡 Giving Advice</div>
+                <div class="scenario">Your friend has a terrible toothache but is very afraid of going to the dentist.</div>
+                <div class="target"><b>Target:</b> should </div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="category">🔍 Deduction (Present)</div>
+                <div class="scenario">You see your neighbor carrying three huge, heavy grocery bags. He is sweating and walking very slowly.</div>
+                <div class="target"><b>Target:</b> must be</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="category">🕵️ Deduction (Past)</div>
+                <div class="scenario">Your classmate got 100% on the hardest math test, but you know he was playing video games all week and never opened the book.</div>
+                <div class="target">T<b>Target:</b> must have / might have</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="category">⏪ Past Unnecessary Action</div>
+                <div class="scenario">You brought a huge, heavy umbrella to school this morning, but the sun has been shining brightly all day.</div>
+                <div class="target"><b>Target:</b> needn't have + V3</div>
+            </div>
+
+            <div class="speaking-card">
+                <div class="category">😔 Past Regret</div>
+                <div class="scenario">You stayed up until 3 AM watching TikTok videos, and now you can't keep your eyes open during the first lesson.</div>
+                <div class="target"><b>Target:</b> shouldn't have + V3</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

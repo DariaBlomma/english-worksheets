@@ -315,6 +315,44 @@
     font-size: 11px;
   }
 
+  /* Сетка для 3-х колонок */
+  .vs-comparison-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  /* Адаптация размеров для 3-х колонок, чтобы влезло на A4 */
+  .vs-comparison-3 .vs-label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .vs-comparison-3 .vs-type {
+    font-size: 10px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+  }
+
+  .vs-comparison-3 .vs-desc {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .vs-comparison-3 .vs-example {
+    padding: 6px 8px;
+  }
+
+  .vs-comparison-3 .vs-example p {
+    font-size: 11px;
+    margin: 3px 0;
+  }
+
+  .vs-comparison-3 .vs-example i {
+    font-size: 10px;
+  }
+
   .logo-placeholder {
     width: 200px;
     height: 80px;
@@ -471,6 +509,82 @@
             <p>After 3 hours, I <b>was able to</b> fix the computer. <i>(Specific achievement, not "could fix")</i></p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- MAY vs MIGHT vs COULD -->
+    <div class="vs-section">
+      <h3 class="vs-heading">⚔️ MAY vs MIGHT vs COULD (The Possibility Trio)</h3>
+      <div class="vs-comparison-3">
+
+        <!-- MAY -->
+        <div class="vs-item">
+          <div class="vs-label">MAY</div>
+          <div class="vs-meaning">
+            <span class="vs-type" style="background: #3b82f6;">Real Possibility (~50%)</span>
+            <p class="vs-desc"><b>Answers: "How likely is it?"</b> A real, factual possibility. Often used in formal contexts, news, or weather forecasts. There's a genuine chance it will happen.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Examples:</span>
+            <p>It <b>may</b> rain later. <i>(Take an umbrella, it's quite likely)</i></p>
+            <p>She <b>may</b> come to the party. <i>(She hasn't decided yet, but it's a real option)</i></p>
+          </div>
+        </div>
+
+        <!-- MIGHT -->
+        <div class="vs-item">
+          <div class="vs-label">MIGHT</div>
+          <div class="vs-meaning">
+            <span class="vs-type" style="background: rgb(59 130 246 / 0.3); color: black">Remote Possibility (~20-30%)</span>
+            <p class="vs-desc"><b>Answers: "How likely is it?"</b> Less certain than 'may'. More hypothetical, doubtful, or tentative. Don't count on it, but it's not impossible.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Examples:</span>
+            <p>I <b>might</b> go to the party, but I'm very tired. <i>(Don't expect me there)</i></p>
+            <p>He <b>might</b> know the answer. <i>(I'm not sure, probably not)</i></p>
+          </div>
+        </div>
+
+        <!-- COULD -->
+        <div class="vs-item">
+          <div class="vs-label">COULD</div>
+          <div class="vs-meaning">
+            <span class="vs-type" style="background: #10b981;">Theoretical Possibility / Options</span>
+            <p class="vs-desc"><b>Answers: "Is it possible in principle?" or "Do we have this option?"</b> Not about probability, but about potential or available choices. Something is possible in theory, or it's just one of several options.</p>
+          </div>
+          <div class="vs-example">
+            <span class="example-label">Examples:</span>
+            <p>Driving too fast <b>could</b> be dangerous. <i>(It's theoretically possible, general truth)</i></p>
+            <p>We <b>could</b> order pizza, or we <b>could</b> cook. <i>(We're discussing options, not chances)</i></p>
+            <p>I <b>could</b> help you tomorrow. <i>(I have this option available)</i></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- The Party Test -->
+      <div class="trap-box" style="background: rgba(16, 185, 129, 0.1); border-left-color: #10b981; margin-top: 14px;">
+        🎉 <strong>THE PARTY TEST:</strong> Imagine someone invites you to a party. How do you respond?<br><br>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 8px;">
+          <div>
+            <b>"I MAY go."</b><br>
+            <i style="font-size: 10px;">Real chance (~50%). I haven't decided, but it's a genuine plan.</i>
+          </div>
+          <div>
+            <b>"I MIGHT go."</b><br>
+            <i style="font-size: 10px;">Small chance (~20-30%). I'm doubtful, tired, but not ruling it out completely.</i>
+          </div>
+          <div>
+            <b>"I COULD go."</b><br>
+            <i style="font-size: 10px;">It's an option. I have this possibility, but it doesn't mean I will. Often part of weighing choices: "I could go, or I could stay home."</i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro Tip for Past -->
+      <div class="trap-box" style="background: rgba(59, 130, 246, 0.1); border-left-color: #3b82f6; margin-top: 14px;">
+        💡 <strong>PRO TIP for the Past:</strong> In the past, all three merge into the same meaning! <br>
+        <i>She <b>may have missed</b> the bus = She <b>might have missed</b> the bus = She <b>could have missed</b> the bus.</i> (It's possible that she did). Don't look for differences here!
       </div>
     </div>
   </div>
