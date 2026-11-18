@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modals in Conditionals: Advanced Guide</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .page {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 30px 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1e293b;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            color: #0f172a;
+        }
+
+        .header .subtitle {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .block {
+            margin-bottom: 20px;
+            padding: 18px 20px;
+            border-radius: 10px;
+            page-break-inside: avoid;
+        }
+
+        /* Advanced Theme Colors */
+        .block-adv {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-left: 5px solid #475569;
+        }
+        .block-warn {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 5px solid #ef4444;
+        }
+        .block-tip {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-left: 5px solid #22c55e;
+        }
+
+        .block-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .block-adv .block-title { color: #334155; }
+        .block-warn .block-title { color: #b91c1c; }
+        .block-tip .block-title { color: #15803d; }
+
+        .block-text {
+            font-size: 13px;
+            color: #334155;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .example-box {
+            background: rgba(255,255,255,0.8);
+            padding: 12px 14px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .example-box .wrong {
+            color: #dc2626;
+            text-decoration: line-through;
+            font-size: 12.5px;
+            margin-bottom: 4px;
+        }
+
+        .example-box .right {
+            color: #15803d;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .example-box .explanation {
+            font-size: 11.5px;
+            color: #64748b;
+            font-style: italic;
+            margin-top: 4px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255,255,255,0.7);
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 12.5px;
+            margin-top: 10px;
+        }
+
+        .comparison-table th {
+            background: rgba(0,0,0,0.06);
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #475569;
+        }
+
+        .comparison-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            vertical-align: top;
+        }
+
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        .modal-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+        }
+        .tag-no { background: #fee2e2; color: #b91c1c; }
+        .tag-yes { background: #dcfce7; color: #15803d; }
+        .tag-rare { background: #fef3c7; color: #b45309; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; padding: 15mm; }
+            .block { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h1>⚠️ MUST & SHOULD in Conditionals</h1>
+        <div class="subtitle">Advanced Rules vs. Real-Life Usage (2nd & 3rd Conditionals)</div>
+    </div>
+
+    <!-- BLOCK 1: THE SHORT ANSWER -->
+    <div class="block block-adv">
+        <div class="block-title">📌 THE SHORT ANSWER</div>
+        <div class="block-text">
+            In hypothetical situations (2nd and 3rd Conditionals), the grammar of "distancing" applies. Because <b>must</b> has no "distanced" (past) form, it <b>cannot</b> be used in the main clause of unreal conditionals. <b>Should</b> is grammatically possible but sounds archaic or overly formal in modern English.
+        </div>
+        <div class="block-text"><b>The Golden Rule:</b> When you want to express hypothetical obligation, always use <b>would have to</b> (2nd) or <b>would have had to</b> (3rd).</div>
+    </div>
+
+    <!-- BLOCK 2: THE "MUST" TRAP -->
+    <div class="block block-warn">
+        <div class="block-title">🚫 THE "MUST" TRAP (And how to fix it)</div>
+        <div class="block-text">
+            Students often try to put <i>must</i> or <i>must have</i> in the result clause of a hypothetical situation. This creates a logical crash: conditionals describe <b>unreality</b>, but <i>must have + V3</i> is used for <b>logical deduction about real facts</b>.
+        </div>
+
+        <div class="example-box">
+            <div class="wrong">❌ If I were the boss, I <b>must</b> fire him.</div>
+            <div class="right">✅ If I were the boss, I <b>would have to</b> fire him.</div>
+            <div class="explanation">2nd Conditional: Hypothetical obligation in the present/future.</div>
+        </div>
+
+        <div class="example-box">
+            <div class="wrong">❌ If I had seen the accident, I <b>must have called</b> the police.</div>
+            <div class="right">✅ If I had seen the accident, I <b>would have had to call</b> the police.</div>
+            <div class="explanation">3rd Conditional: Hypothetical obligation in the past. (Note: "must have called" means "I am 99% sure I really called", which contradicts the "If" clause).</div>
+        </div>
+    </div>
+
+    <!-- BLOCK 3: THE "SHOULD" NUANCE -->
+    <div class="block block-adv">
+        <div class="block-title">⚖️ THE "SHOULD" NUANCE: Formal vs. Modern</div>
+        <div class="block-text">
+            Can we use <i>should</i> in the main clause of 2nd/3rd conditionals? Technically yes, but it changes the meaning and tone.
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+            <tr>
+                <th>Usage</th>
+                <th>Example</th>
+                <th>Reality Check</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span class="modal-tag tag-rare">Formal / Archaic</span><br>Hypothetical advice</td>
+                <td>"If I were you, I <b>should</b> apologize."</td>
+                <td>Grammatically correct, but sounds like a 19th-century novel. Modern speakers use <b>would</b> ("I would apologize").</td>
+            </tr>
+            <tr>
+                <td><span class="modal-tag tag-yes">Modern / Common</span><br>Criticism of REAL past</td>
+                <td>"You <b>should have studied</b> harder!"</td>
+                <td><b>THIS IS NOT A CONDITIONAL.</b> This is a standalone expression of regret or criticism about a fact that actually happened (or didn't happen).</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BLOCK 4: QUICK CHEAT SHEET -->
+    <div class="block block-tip">
+        <div class="block-title">💡 QUICK CHEAT SHEET FOR EXAMS</div>
+        <table class="comparison-table">
+            <thead>
+            <tr>
+                <th>If you want to say...</th>
+                <th>2nd Conditional (Unreal Present)</th>
+                <th>3rd Conditional (Unreal Past)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><b>Neutral result</b> ("I would do it")</td>
+                <td><span class="modal-tag tag-yes">would + V1</span></td>
+                <td><span class="modal-tag tag-yes">would have + V3</span></td>
+            </tr>
+            <tr>
+                <td><b>Hypothetical ability</b> ("I would be able to")</td>
+                <td><span class="modal-tag tag-yes">could + V1</span></td>
+                <td><span class="modal-tag tag-yes">could have + V3</span></td>
+            </tr>
+            <tr>
+                <td><b>Hypothetical obligation</b> ("I would be forced to")</td>
+                <td><span class="modal-tag tag-yes">would have to + V1</span></td>
+                <td><span class="modal-tag tag-yes">would have had to + V3</span></td>
+            </tr>
+            <tr>
+                <td><b>Strict rule / Deduction</b></td>
+                <td><span class="modal-tag tag-no">DON'T USE MUST</span></td>
+                <td><span class="modal-tag tag-no">DON'T USE MUST HAVE</span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
