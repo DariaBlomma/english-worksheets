@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adjective Suffixes & TV Preferences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2D3748;
+            background: #E8EDF2;
+            background-image:
+                    radial-gradient(circle at 20% 30%, rgba(26,54,93,0.04) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(201,162,39,0.04) 0%, transparent 50%),
+                    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(26,54,93,0.015) 35px, rgba(26,54,93,0.015) 36px);
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #F7F9FC;
+            border-radius: 12px;
+            padding: 50px 55px;
+            box-shadow: 0 10px 40px rgba(26,54,93,0.08);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1A365D;
+            text-align: center;
+            letter-spacing: 1.5px;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A365D;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rules-card {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 35px;
+            border-left: 5px solid #1A365D;
+            box-shadow: 0 4px 15px rgba(26,54,93,0.06);
+        }
+
+        .rules-intro {
+            font-size: 14px;
+            color: #4A5568;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .suffix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .suffix-card {
+            background: #F1F5F9;
+            border-radius: 8px;
+            padding: 16px 18px;
+            border-left: 4px solid #C9A227;
+        }
+
+        .suffix-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1A365D;
+            margin-bottom: 6px;
+        }
+
+        .suffix-meaning {
+            font-size: 13px;
+            color: #4A5568;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .suffix-example {
+            font-size: 13px;
+            color: #2D3748;
+        }
+
+        .root {
+            font-weight: 700;
+            color: #2B6CB0;
+        }
+
+        .arrow {
+            color: #C9A227;
+            font-weight: 700;
+            margin: 0 4px;
+        }
+
+        .result {
+            font-weight: 700;
+            color: #1A365D;
+        }
+
+        .task {
+            margin-bottom: 35px;
+        }
+
+        .task-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #1A365D;
+            padding-bottom: 8px;
+        }
+
+        .task-number {
+            background: #1A365D;
+            color: #FFFFFF;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .task-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1A365D;
+        }
+
+        .task-instruction {
+            font-size: 14px;
+            color: #4A5568;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .question-item {
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        .question-text {
+            margin-bottom: 4px;
+        }
+
+        .word-in-brackets {
+            font-weight: 700;
+            color: #C9A227;
+            text-transform: uppercase;
+        }
+
+        .answer-line {
+            display: inline-block;
+            min-width: 120px;
+            border-bottom: 1px solid #CBD5E0;
+            margin: 0 4px;
+        }
+
+        .answer-line-full {
+            display: block;
+            margin-top: 4px;
+            border-bottom: 1px solid #CBD5E0;
+            min-height: 22px;
+        }
+
+        .vocab-box {
+            background: #EBF8FF;
+            border: 1px solid #BEE3F8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+        }
+
+        .vocab-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1A365D;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .vocab-list {
+            font-size: 13px;
+            color: #2D3748;
+            line-height: 1.7;
+        }
+
+        .vocab-list b {
+            color: #2B6CB0;
+        }
+
+        @media print {
+            body { background: #FFFFFF; padding: 0; }
+            .page { box-shadow: none; padding: 20px 25px; }
+            .task { break-inside: avoid; }
+            .vocab-box { background: #F7FAFC !important; -webkit-print-color-adjust: exact; }
+        }
+
+        @media (max-width: 700px) {
+            .page { padding: 25px 20px; }
+            h1 { font-size: 22px; }
+            .suffix-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>Adjective Suffixes: The "Root" Method</h1>
+
+    <!-- RULES -->
+    <div class="rules-card">
+        <h2>How to Build Adjectives</h2>
+        <p class="rules-intro">Every adjective has a "hidden root" inside it. Find the root — and you'll understand the meaning!</p>
+
+        <div class="suffix-grid">
+            <div class="suffix-card">
+                <div class="suffix-title">-IVE (from a VERB)</div>
+                <div class="suffix-meaning">"Having the quality of doing this action"</div>
+                <div class="suffix-example">
+                    <span class="root">Attract</span> (притягивать) <span class="arrow">➔</span> <span class="result">attractive</span> (привлекательный)<br>
+                    <span class="root">Create</span> (создавать) <span class="arrow">➔</span> <span class="result">creative</span> (творческий)<br>
+                    <span class="root">Act</span> (действовать) <span class="arrow">➔</span> <span class="result">active</span> (активный)
+                </div>
+            </div>
+
+            <div class="suffix-card">
+                <div class="suffix-title">-ABLE / -IBLE (from a VERB)</div>
+                <div class="suffix-meaning">"Can be... / possible to..."</div>
+                <div class="suffix-example">
+                    <span class="root">Enjoy</span> (наслаждаться) <span class="arrow">➔</span> <span class="result">enjoyable</span> (приятный)<br>
+                    <span class="root">Comfort</span> (комфорт) <span class="arrow">➔</span> <span class="result">comfortable</span> (удобный)<br>
+                    <span class="root">Eat</span> (есть) <span class="arrow">➔</span> <span class="result">edible</span> (съедобный)
+                </div>
+            </div>
+
+            <div class="suffix-card">
+                <div class="suffix-title">-IC (from a NOUN)</div>
+                <div class="suffix-meaning">"Related to / typical of something"</div>
+                <div class="suffix-example">
+                    <span class="root">Hero</span> (герой) <span class="arrow">➔</span> <span class="result">heroic</span> (героический)<br>
+                    <span class="root">Fantasy</span> (фантазия) <span class="arrow">➔</span> <span class="result">fantastic</span> (фантастический)<br>
+                    <span class="root">Drama</span> (драма) <span class="arrow">➔</span> <span class="result">dramatic</span> (драматичный)
+                </div>
+            </div>
+
+            <div class="suffix-card">
+                <div class="suffix-title">-ING (from a VERB)</div>
+                <div class="suffix-meaning">"Causing this feeling" (about things)</div>
+                <div class="suffix-example">
+                    <span class="root">Bore</span> (наводить скуку) <span class="arrow">➔</span> <span class="result">boring</span> (скучный)<br>
+                    <span class="root">Excite</span> (волновать) <span class="arrow">➔</span> <span class="result">exciting</span> (захватывающий)<br>
+                    <span class="root">Disgust</span> (вызывать отвращение) <span class="arrow">➔</span> <span class="result">disgusting</span> (отвратительный)
+                </div>
+            </div>
+        </div>
+
+        <div class="suffix-card" style="border-left-color: #E53E3E;">
+            <div class="suffix-title">-FUL vs -LESS (Opposites!)</div>
+            <div class="suffix-meaning">-ful = "full of" | -less = "without"</div>
+            <div class="suffix-example">
+                <span class="root">Care</span> (забота) <span class="arrow">➔</span> <span class="result">careful</span> (осторожный) <span style="color:#E53E3E;">vs</span> <span class="result">careless</span> (небрежный)<br>
+                <span class="root">Use</span> (польза) <span class="arrow">➔</span> <span class="result">useful</span> (полезный) <span style="color:#E53E3E;">vs</span> <span class="result">useless</span> (бесполезный)
+            </div>
+        </div>
+    </div>
+
+    <!-- TASK 1: Word Formation -->
+    <div class="task">
+        <div class="task-header">
+            <span class="task-number">1</span>
+            <span class="task-title">Word Formation (ЕГЭ Format)</span>
+        </div>
+        <p class="task-instruction">Read the text. Transform the words in capitals at the end of each line so that they fit grammatically and lexically. Use adjective suffixes!</p>
+
+        <div class="question-item">
+            <div class="question-text">My favourite TV show is a talent show. It is very <span class="answer-line"></span> and I watch it every week. <span class="word-in-brackets">(ENJOY)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">The host of the show is a really <span class="answer-line"></span> person — he always makes people laugh. <span class="word-in-brackets">(CREATE)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">The performances are <span class="answer-line"></span> — you never know what will happen next! <span class="word-in-brackets">(EXCITE)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">Some reality shows, however, are completely <span class="answer-line"></span>. I never watch them. <span class="word-in-brackets">(USE)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">Documentaries are usually very <span class="answer-line"></span> because you learn a lot of new things. <span class="word-in-brackets">(INTEREST)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">My little brother loves cartoons, but I think they are a bit <span class="answer-line"></span> for my age. <span class="word-in-brackets">(CHILD)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">The winner of the competition was truly <span class="answer-line"></span> — everyone stood up and clapped. <span class="word-in-brackets">(IMPRESS)</span></div>
+        </div>
+    </div>
+
+    <!-- TASK 2: Translation -->
+    <div class="task">
+        <div class="task-header">
+            <span class="task-number">2</span>
+            <span class="task-title">Translate into English</span>
+        </div>
+        <p class="task-instruction">Переведите предложения на английский язык. Используйте <b>TV shows vocabulary</b>, <b>adverbs of frequency</b> и <b>adjectives with suffixes</b>.</p>
+
+        <div class="vocab-box">
+            <div class="vocab-title">Useful Vocabulary:</div>
+            <div class="vocab-list">
+                <b>TV shows:</b> cartoons, sitcoms, talent shows, documentaries, reality shows, game shows, the news, soap operas<br>
+                <b>Adverbs of frequency:</b> always, usually, often, sometimes, rarely, never<br>
+                <b>Preferences:</b> love, like, don't like, hate<br>
+                <b>Adjectives:</b> enjoyable, exciting, boring, disgusting, fantastic, creative, active, useless
+            </div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">1. Я обычно смотрю ситкомы по вечерам, потому что они смешные и приятные.</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. Мой брат всегда смотрит новости. Он думает, что они интересные.</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. Я ненавижу реалити-шоу. Они скучные и бесполезные.</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. Мы редко смотрим документальные фильмы, но они очень познавательные.</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. Ты когда-нибудь смотришь шоу талантов? Они захватывающие!</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">6. Моя сестра часто смотрит мыльные оперы. Она думает, что они фантастические.</div>
+            <span class="answer-line-full"></span>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">7. Я никогда не смотрю игровые шоу. Они слишком шумные и раздражающие.</div>
+            <span class="answer-line-full"></span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
