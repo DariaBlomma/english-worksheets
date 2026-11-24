@@ -86,14 +86,14 @@
 
         .suffix-meaning {
             font-size: 13px;
-            color: #4A5568;
+            color: #2D3748;
             margin-bottom: 8px;
-            font-style: italic;
+            font-weight: 600;
         }
 
         .suffix-example {
             font-size: 13px;
-            color: #2D3748;
+            color: #4A5568;
         }
 
         .root {
@@ -185,7 +185,7 @@
             background: #EBF8FF;
             border: 1px solid #BEE3F8;
             border-radius: 8px;
-            padding: 16px 20px;
+            padding: 20px 24px;
             margin-bottom: 20px;
         }
 
@@ -194,17 +194,27 @@
             font-weight: 700;
             color: #1A365D;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .vocab-list {
-            font-size: 13px;
+            font-size: 14px;
             color: #2D3748;
-            line-height: 1.7;
+            line-height: 1.8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 24px;
         }
 
         .vocab-list b {
             color: #2B6CB0;
+            font-weight: 600;
+        }
+
+        .transcription {
+            color: #718096;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
         }
 
         @media print {
@@ -218,6 +228,7 @@
             .page { padding: 25px 20px; }
             h1 { font-size: 22px; }
             .suffix-grid { grid-template-columns: 1fr; }
+            .vocab-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -228,23 +239,23 @@
 
     <!-- RULES -->
     <div class="rules-card">
-        <h2>How to Build Adjectives</h2>
-        <p class="rules-intro">Every adjective has a "hidden root" inside it. Find the root — and you'll understand the meaning!</p>
+        <h2>Как образуются прилагательные</h2>
+        <p class="rules-intro">У каждого прилагательного есть «спрятанный корень». Найди корень — и ты поймешь значение!</p>
 
         <div class="suffix-grid">
             <div class="suffix-card">
-                <div class="suffix-title">-IVE (from a VERB)</div>
-                <div class="suffix-meaning">"Having the quality of doing this action"</div>
+                <div class="suffix-title">-IVE (от ГЛАГОЛА)</div>
+                <div class="suffix-meaning">«Обладающий свойством делать это действие» или «склонный к этому»</div>
                 <div class="suffix-example">
-                    <span class="root">Attract</span> (притягивать) <span class="arrow">➔</span> <span class="result">attractive</span> (привлекательный)<br>
+                    <span class="root">Attract</span> (притягать) <span class="arrow">➔</span> <span class="result">attractive</span> (привлекательный)<br>
                     <span class="root">Create</span> (создавать) <span class="arrow">➔</span> <span class="result">creative</span> (творческий)<br>
                     <span class="root">Act</span> (действовать) <span class="arrow">➔</span> <span class="result">active</span> (активный)
                 </div>
             </div>
 
             <div class="suffix-card">
-                <div class="suffix-title">-ABLE / -IBLE (from a VERB)</div>
-                <div class="suffix-meaning">"Can be... / possible to..."</div>
+                <div class="suffix-title">-ABLE / -IBLE (от ГЛАГОЛА)</div>
+                <div class="suffix-meaning">«Такой, который можно...» или «поддающийся действию»</div>
                 <div class="suffix-example">
                     <span class="root">Enjoy</span> (наслаждаться) <span class="arrow">➔</span> <span class="result">enjoyable</span> (приятный)<br>
                     <span class="root">Comfort</span> (комфорт) <span class="arrow">➔</span> <span class="result">comfortable</span> (удобный)<br>
@@ -253,8 +264,8 @@
             </div>
 
             <div class="suffix-card">
-                <div class="suffix-title">-IC (from a NOUN)</div>
-                <div class="suffix-meaning">"Related to / typical of something"</div>
+                <div class="suffix-title">-IC (от СУЩЕСТВИТЕЛЬНОГО)</div>
+                <div class="suffix-meaning">«Относящийся к чему-то», «в стиле чего-то» или «свойственный этому»</div>
                 <div class="suffix-example">
                     <span class="root">Hero</span> (герой) <span class="arrow">➔</span> <span class="result">heroic</span> (героический)<br>
                     <span class="root">Fantasy</span> (фантазия) <span class="arrow">➔</span> <span class="result">fantastic</span> (фантастический)<br>
@@ -263,8 +274,8 @@
             </div>
 
             <div class="suffix-card">
-                <div class="suffix-title">-ING (from a VERB)</div>
-                <div class="suffix-meaning">"Causing this feeling" (about things)</div>
+                <div class="suffix-title">-ING (от ГЛАГОЛА)</div>
+                <div class="suffix-meaning">«Вызывающий это чувство» (описывает предмет, а не человека)</div>
                 <div class="suffix-example">
                     <span class="root">Bore</span> (наводить скуку) <span class="arrow">➔</span> <span class="result">boring</span> (скучный)<br>
                     <span class="root">Excite</span> (волновать) <span class="arrow">➔</span> <span class="result">exciting</span> (захватывающий)<br>
@@ -274,8 +285,8 @@
         </div>
 
         <div class="suffix-card" style="border-left-color: #E53E3E;">
-            <div class="suffix-title">-FUL vs -LESS (Opposites!)</div>
-            <div class="suffix-meaning">-ful = "full of" | -less = "without"</div>
+            <div class="suffix-title">-FUL vs -LESS (Противоположности!)</div>
+            <div class="suffix-meaning">-ful = «полный чего-то» | -less = «без чего-то»</div>
             <div class="suffix-example">
                 <span class="root">Care</span> (забота) <span class="arrow">➔</span> <span class="result">careful</span> (осторожный) <span style="color:#E53E3E;">vs</span> <span class="result">careless</span> (небрежный)<br>
                 <span class="root">Use</span> (польза) <span class="arrow">➔</span> <span class="result">useful</span> (полезный) <span style="color:#E53E3E;">vs</span> <span class="result">useless</span> (бесполезный)
@@ -289,7 +300,7 @@
             <span class="task-number">1</span>
             <span class="task-title">Word Formation (ЕГЭ Format)</span>
         </div>
-        <p class="task-instruction">Read the text. Transform the words in capitals at the end of each line so that they fit grammatically and lexically. Use adjective suffixes!</p>
+        <p class="task-instruction">Read the text. Transform the words in capitals at the end of each line so that they fit grammatically and lexically. Use adjective suffixes from the rule!</p>
 
         <div class="question-item">
             <div class="question-text">My favourite TV show is a talent show. It is very <span class="answer-line"></span> and I watch it every week. <span class="word-in-brackets">(ENJOY)</span></div>
@@ -312,64 +323,97 @@
         </div>
 
         <div class="question-item">
-            <div class="question-text">My little brother loves cartoons, but I think they are a bit <span class="answer-line"></span> for my age. <span class="word-in-brackets">(CHILD)</span></div>
+            <div class="question-text">Watching TV on a big soft sofa is very <span class="answer-line"></span>. <span class="word-in-brackets">(COMFORT)</span></div>
         </div>
 
         <div class="question-item">
-            <div class="question-text">The winner of the competition was truly <span class="answer-line"></span> — everyone stood up and clapped. <span class="word-in-brackets">(IMPRESS)</span></div>
+            <div class="question-text">The special effects in this show are absolutely <span class="answer-line"></span>. <span class="word-in-brackets">(FANTASY)</span></div>
         </div>
     </div>
 
-    <!-- TASK 2: Translation -->
+    <!-- TASK 2: Guess the Suffix -->
     <div class="task">
         <div class="task-header">
             <span class="task-number">2</span>
+            <span class="task-title">Guess the Suffix</span>
+        </div>
+        <p class="task-instruction">Add the correct suffix (<b>-ive, -able, -ic, -ing, -ful, -less</b>) to the root word in brackets to complete the sentence. Use the logic from the rule!</p>
+
+        <div class="question-item">
+            <div class="question-text">1. My friend is very <span class="answer-line"></span> when I need help with my homework. <span class="word-in-brackets">(HELP)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. It is sad to see <span class="answer-line"></span> animals on the street. <span class="word-in-brackets">(HOME)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. Listening to quiet music is very <span class="answer-line"></span> after a long day at school. <span class="word-in-brackets">(RELAX)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. The ending of the movie was very <span class="answer-line"></span>; everyone was crying. <span class="word-in-brackets">(DRAMA)</span></div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. This is a very <span class="answer-line"></span> piece of advice, thank you! <span class="word-in-brackets">(VALUE)</span></div>
+        </div>
+    </div>
+
+    <!-- TASK 3: Translation -->
+    <div class="task">
+        <div class="task-header">
+            <span class="task-number">3</span>
             <span class="task-title">Translate into English</span>
         </div>
-        <p class="task-instruction">Переведите предложения на английский язык. Используйте <b>TV shows vocabulary</b>, <b>adverbs of frequency</b> и <b>adjectives with suffixes</b>.</p>
+        <p class="task-instruction">Переведите предложения на английский язык. Используйте лексику из таблицы, наречия частоты и прилагательные с суффиксами.</p>
 
         <div class="vocab-box">
-            <div class="vocab-title">Useful Vocabulary:</div>
+            <div class="vocab-title">TV Shows Vocabulary:</div>
             <div class="vocab-list">
-                <b>TV shows:</b> cartoons, sitcoms, talent shows, documentaries, reality shows, game shows, the news, soap operas<br>
-                <b>Adverbs of frequency:</b> always, usually, often, sometimes, rarely, never<br>
-                <b>Preferences:</b> love, like, don't like, hate<br>
-                <b>Adjectives:</b> enjoyable, exciting, boring, disgusting, fantastic, creative, active, useless
+                <div><b>cartoons</b> <span class="transcription">[kɑːˈtuːnz]</span> – мультфильмы</div>
+                <div><b>sitcoms</b> <span class="transcription">[ˈsɪtkɒmz]</span> – ситуационные комедии</div>
+                <div><b>talent shows</b> <span class="transcription">[ˈtælənt ʃəʊz]</span> – шоу талантов</div>
+                <div><b>documentaries</b> <span class="transcription">[ˌdɒkjuˈmentriz]</span> – документальные фильмы</div>
+                <div><b>reality shows</b> <span class="transcription">[riˈæləti ʃəʊz]</span> – реалити-шоу</div>
+                <div><b>game shows</b> <span class="transcription">[ɡeɪm ʃəʊz]</span> – игровые шоу / викторины</div>
+                <div><b>the news</b> <span class="transcription">[ðə njuːz]</span> – новости</div>
+                <div><b>soap operas</b> <span class="transcription">[səʊp ˈɒpərəz]</span> – мыльные оперы / сериалы</div>
             </div>
         </div>
 
         <div class="question-item">
-            <div class="question-text">1. Я обычно смотрю ситкомы по вечерам, потому что они смешные и приятные.</div>
+            <div class="question-text">1. Я обычно смотрю ситкомы по вечерам, потому что они смешные и <i>приятные</i>.</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">2. Мой брат всегда смотрит новости. Он думает, что они интересные.</div>
+            <div class="question-text">2. Мой брат всегда смотрит новости. Он думает, что они <i>интересные</i>.</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">3. Я ненавижу реалити-шоу. Они скучные и бесполезные.</div>
+            <div class="question-text">3. Я ненавижу реалити-шоу. Они <i>скучные</i> и <i>бесполезные</i>.</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">4. Мы редко смотрим документальные фильмы, но они очень познавательные.</div>
+            <div class="question-text">4. Мы редко смотрим документальные фильмы, но они очень <i>полезные</i>.</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">5. Ты когда-нибудь смотришь шоу талантов? Они захватывающие!</div>
+            <div class="question-text">5. Ты когда-нибудь смотришь шоу талантов? Они <i>захватывающие</i>!</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">6. Моя сестра часто смотрит мыльные оперы. Она думает, что они фантастические.</div>
+            <div class="question-text">6. Моя сестра часто смотрит мыльные оперы. Она думает, что они <i>фантастические</i>.</div>
             <span class="answer-line-full"></span>
         </div>
 
         <div class="question-item">
-            <div class="question-text">7. Я никогда не смотрю игровые шоу. Они слишком шумные и раздражающие.</div>
+            <div class="question-text">7. Я никогда не смотрю игровые шоу. Они слишком шумные и <i>отвратительные</i>.</div>
             <span class="answer-line-full"></span>
         </div>
     </div>
