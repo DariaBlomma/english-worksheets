@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Устная часть — Задание 1: Чтение текста вслух</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e36;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f6fa;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            border-bottom: 2px solid #1a4535;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 4px;
+            border-bottom: 3px solid #1a4535;
+        }
+
+        h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: normal;
+            border-left: 4px solid #1a4535;
+            padding-left: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: #f9fffb;
+            border-radius: 0 4px 4px 0;
+        }
+
+        h3 {
+            font-family: 'Segoe UI', sans-serif;
+            color: #1a4535;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #c8dcd2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 15px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.08);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaf4f0;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1a4535;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: none;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8faf9;
+        }
+
+        tbody tr:hover {
+            background-color: #eef5f2;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #1a4535;
+        }
+
+        .criteria-card {
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            border-left: 4px solid #1a4535;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.05);
+        }
+
+        .criteria-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #1a4535;
+            font-size: 16px;
+        }
+
+        .criteria-card .points {
+            display: inline-block;
+            background-color: #1a4535;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .criteria-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .criteria-card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14.5px;
+            border-bottom: 1px solid #f4f9f7;
+        }
+
+        .criteria-card li:last-child {
+            border-bottom: none;
+        }
+
+        .criteria-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 8px;
+            color: #2c6e52;
+            font-weight: bold;
+        }
+
+        .criteria-card li strong {
+            color: #1a4535;
+        }
+
+        .info-box {
+            background-color: #f9fffb;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c6e52;
+            font-size: 15px;
+        }
+
+        .info-box strong {
+            color: #1a4535;
+        }
+
+        .warning-box {
+            background-color: #fdf6f0;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #c47a4a;
+            font-size: 15px;
+        }
+
+        .warning-box strong {
+            color: #8a4f22;
+        }
+
+        .sample-text {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            line-height: 2.0;
+            color: #2c3e36;
+        }
+
+        .sample-text .pause {
+            color: #c47a4a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .sample-text .stress {
+            font-weight: bold;
+            color: #1a4535;
+            text-decoration: underline;
+            text-decoration-color: #2c6e52;
+            text-decoration-thickness: 2px;
+        }
+
+        .source-note {
+            font-size: 13px;
+            color: #6b7b8d;
+            font-style: italic;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #f4f6fa;
+            border-radius: 3px;
+            border-left: 3px solid #8fa4c4;
+        }
+
+        .link-box {
+            background-color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border: 1px dashed #2c6e52;
+            font-size: 15px;
+        }
+
+        .link-box a {
+            color: #2c6e52;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .link-box a:hover {
+            text-decoration: underline;
+            color: #1a4535;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ОГЭ Устная часть — Задание 1<br>«Чтение текста вслух»</h1>
+
+<div class="info-box">
+    <strong>Краткое ТЗ:</strong> Прочитать вслух научно-популярный текст объемом около 100 слов. <br>
+    <strong>Время:</strong> 1,5 минуты на подготовку (про себя) + до 2 минут на чтение вслух. <br>
+    <strong>Цель:</strong> Продемонстрировать правильное произношение, интонацию и чтение чисел/дат. Понимание смысла текста вторично.
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Параметр</th>
+        <th>Значение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Номер задания в КИМ</td>
+        <td>Устная часть, Задание 1</td>
+    </tr>
+    <tr>
+        <td>Тип текста</td>
+        <td>Научно-популярный (о природе, науке, истории, технологиях)</td>
+    </tr>
+    <tr>
+        <td>Объем текста</td>
+        <td>~100 слов</td>
+    </tr>
+    <tr>
+        <td>Уровень сложности</td>
+        <td>Базовый</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">Максимальный первичный балл</td>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">2 балла</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Критерии оценивания</h2>
+
+<div class="criteria-card">
+    <h3>Произношение и интонация <span class="points">макс. 2 балла</span></h3>
+    <ul>
+        <li><strong>2 балла:</strong> Текст прочитан без ошибок. Соблюдена правильная интонация, логические паузы и ударения. Допускается <strong>не более 1</strong> фонетической ошибки.</li>
+        <li><strong>1 балл:</strong> Допущено <strong>2–3</strong> фонетические ошибки, ИЛИ есть небольшие нарушения интонации и пауз, не сильно искажающие смысл.</li>
+        <li><strong>0 баллов:</strong> Допущено <strong>4 и более</strong> фонетических ошибок, ИЛИ чтение прерывается настолько часто, что речь становится неразборчивой.</li>
+    </ul>
+</div>
+
+<h2>Алгоритм подготовки (1,5 минуты)</h2>
+
+<div class="info-box">
+    <strong>Что делать, пока идет таймер подготовки:</strong>
+    <ol style="margin-top: 10px; padding-left: 20px;">
+        <li><strong>Найди все числа, даты и проценты.</strong> Реши про себя, как их читать.</li>
+        <li><strong>Найди длинные/незнакомые слова.</strong> Не пытайся их перевести! Разбей их на слоги и прикинь, куда падает ударение.</li>
+        <li><strong>Расставь мысленно паузы.</strong> Обрати внимание на запятые, точки и союзы (and, but, because). Там нужно сделать микро-паузу.</li>
+        <li><strong>Проверь окончания.</strong> Обведи мысленно все <em>-s, -ed, -ing</em>, чтобы не «съесть» их при чтении.</li>
+    </ol>
+</div>
+
+<h2>Разметка текста для тренировки</h2>
+
+<div class="warning-box">
+    <strong>Легенда разметки:</strong><br>
+    <span class="pause"> / </span> = короткая пауза (на запятой или союзе)<br>
+    <span class="pause"> // </span> = длинная пауза (на точке, конец предложения)<br>
+    <span class="stress">Ударение</span> = логическое или словесное ударение (выделяем голосом)
+</div>
+
+<div class="sample-text">
+    <span class="stress">Nowadays</span> <span class="pause"> / </span> <span class="stress">solar</span> energy is <span class="stress">widely</span> used <span class="pause"> / </span> as an <span class="stress">alternative</span> form of <span class="stress">power</span>. //
+    <span class="stress">Solar</span> panels <span class="stress">transform</span> the energy <span class="pause"> / </span> from the sun <span class="pause"> / </span> into <span class="stress">electricity</span>. //
+    The <span class="stress">first</span> plane <span class="pause"> / </span> that does not need <span class="stress">fuel</span> <span class="pause"> / </span> was <span class="stress">constructed</span> in <span class="stress">France</span> <span class="pause"> / </span> in <span class="stress">two thousand and fifteen</span>. //
+    It uses <span class="stress">only</span> the sun's <span class="stress">energy</span>. //
+    The <span class="stress">panels</span> are placed <span class="pause"> / </span> on the <span class="stress">huge</span> wings <span class="pause"> / </span> of the plane. //
+    It doesn't fly <span class="stress">very fast</span>. //
+    <span class="stress">Solar</span> energy <span class="pause"> / </span> can make the plane move <span class="pause"> / </span> at only <span class="stress">one hundred and forty miles</span> an hour. //
+    <span class="stress">However</span> <span class="pause"> / </span> the plane is able <span class="pause"> / </span> to travel <span class="stress">round</span> the <span class="stress">world</span>. //
+    It is <span class="stress">safe</span> <span class="pause"> / </span> and can <span class="stress">successfully</span> cross <span class="pause"> / </span> areas of <span class="stress">bad weather</span>. //
+    In the <span class="stress">future</span> <span class="pause"> / </span> engineers hope <span class="pause"> / </span> to construct a <span class="stress">model</span> <span class="pause"> / </span> that people can <span class="stress">fly</span> in. //
+    Our <span class="stress">dream</span> <span class="pause"> / </span> of <span class="stress">environmentally</span> friendly <span class="stress">transport</span> <span class="pause"> / </span> may come <span class="stress">true</span> <span class="pause"> / </span> <span class="stress">very soon</span>. //
+    Would you like <span class="pause"> / </span> to take a <span class="stress">flight</span> <span class="pause"> / </span> on the <span class="stress">solar</span> plane? <span class="pause"> ↘ </span>
+</div>
+
+<div class="info-box">
+    <strong>Шпаргалка по сложным словам из этого текста:</strong><br>
+    • <strong>Nowadays</strong> — ударение на первый слог: <em>ˈnaʊədeɪz</em>.<br>
+    • <strong>alternative</strong> — ударение на второй слог: <em>ɔːlˈtɜːnətɪv</em>.<br>
+    • <strong>transform</strong> — ударение на второй слог: <em>trænsˈfɔːm</em>.<br>
+    • <strong>constructed</strong> — окончание <em>-ed</em> читается как [t]: <em>kənˈstrʌktɪd</em>.<br>
+    • <strong>successfully</strong> — не проглоти слоги: <em>səkˈsesfəli</em>.<br>
+    • <strong>environmentally</strong> — длинное слово, ударение на «men»: <em>ɪnˌvaɪrənˈmentəli</em>.<br><br>
+    <strong>Как читать числа в этом тексте:</strong><br>
+    • <strong>2015</strong> → <em>two thousand and fifteen</em> (или <em>twenty fifteen</em>).<br>
+    • <strong>140 miles</strong> → <em>one hundred and forty miles</em>.
+</div>
+
+<div class="source-note">
+    Источник: Открытый банк заданий ФИПИ, 2016 г.
+</div>
+
+<h2>Фонетика и беглость: что важно для эксперта</h2>
+
+<div class="info-box">
+    <strong>Главный принцип:</strong> <span style="color: #1a4535; font-weight: 600;">Плавность (fluency) для экспертов часто важнее идеального звука.</span><br>
+    Лучше прочитать сложное слово с легким акцентом, но плавно и в общем темпе, чем делать несколько попыток исправления, сбивая ритм чтения. Наша цель — научиться читать уверенно, не возвращаясь назад.
+</div>
+
+<div class="criteria-card">
+    <h3>Что считается, а что не считается ошибкой</h3>
+    <ul>
+        <li><strong>✅ НЕ считается ошибкой (баллы не снижаются):</strong> легкий акцент; вариации британского/американского произношения (например, <em>can't</em> как [kɑːnt] или [kænt]); неидеальное, но узнаваемое произнесение межзубных [θ] / [ð], если смысл слова не искажается.</li>
+        <li><strong>❌ СЧИТАЕТСЯ ошибкой (балл снижается):</strong> искажение смысла (превращение одного слова в другое: <em>ship</em> → <em>sheep</em>, <em>bad</em> → <em>bed</em>); грубое неправильное ударение в многосложных словах; «съедание» значимых окончаний (<em>-s, -ed, -ing</em>).</li>
+        <li><strong>⚠️ О самоисправлении:</strong> Мгновенное исправление оговорки (без паузы и перехода к следующему слову) формально не считается ошибкой. Однако <strong>множественные попытки</strong> произнести слово, долгие паузы и возвраты назад расцениваются как нарушение беглости (fluency) и ведут к потере баллов. Поэтому стратегия «читаем дальше, не спотыкаемся» является наиболее выигрышной.</li>
+    </ul>
+</div>
+
+<div class="link-box">
+    📄 <strong>Официальный источник:</strong> Открытый банк заданий ФИПИ.<br><br>
+    🔗 <a href="https://oge.fipi.ru/" target="_blank">https://oge.fipi.ru/</a>
+</div>
+
+</body>
+</html>

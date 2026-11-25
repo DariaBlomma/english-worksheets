@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Устная часть — Задание 3: Тематический монолог</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e36;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f6fa;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            border-bottom: 2px solid #1a4535;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 4px;
+            border-bottom: 3px solid #1a4535;
+        }
+
+        h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: normal;
+            border-left: 4px solid #1a4535;
+            padding-left: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: #f9fffb;
+            border-radius: 0 4px 4px 0;
+        }
+
+        h3 {
+            font-family: 'Segoe UI', sans-serif;
+            color: #1a4535;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #c8dcd2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 15px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.08);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaf4f0;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1a4535;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: none;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8faf9;
+        }
+
+        tbody tr:hover {
+            background-color: #eef5f2;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #1a4535;
+        }
+
+        .criteria-card {
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            border-left: 4px solid #1a4535;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.05);
+        }
+
+        .criteria-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #1a4535;
+            font-size: 16px;
+        }
+
+        .criteria-card .points {
+            display: inline-block;
+            background-color: #1a4535;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .criteria-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .criteria-card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14.5px;
+            border-bottom: 1px solid #f4f9f7;
+        }
+
+        .criteria-card li:last-child {
+            border-bottom: none;
+        }
+
+        .criteria-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 8px;
+            color: #2c6e52;
+            font-weight: bold;
+        }
+
+        .criteria-card li strong {
+            color: #1a4535;
+        }
+
+        .info-box {
+            background-color: #f9fffb;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c6e52;
+            font-size: 15px;
+        }
+
+        .info-box strong {
+            color: #1a4535;
+        }
+
+        .warning-box {
+            background-color: #fdf6f0;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #c47a4a;
+            font-size: 15px;
+        }
+
+        .warning-box strong {
+            color: #8a4f22;
+        }
+
+        .sample-text {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            font-family: 'Georgia', serif;
+            font-size: 16px;
+            line-height: 1.9;
+            color: #2c3e36;
+        }
+
+        .sample-text .sentence-count {
+            color: #c47a4a;
+            font-weight: bold;
+            font-size: 13px;
+            vertical-align: super;
+        }
+
+        .link-box {
+            background-color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border: 1px dashed #2c6e52;
+            font-size: 15px;
+        }
+
+        .link-box a {
+            color: #2c6e52;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .link-box a:hover {
+            text-decoration: underline;
+            color: #1a4535;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ОГЭ Устная часть — Задание 3<br>«Тематический монолог»</h1>
+
+<div class="info-box">
+    <strong>Краткое ТЗ:</strong> Подготовить связное высказывание по заданной теме, раскрыв все 4 пункта плана. <br>
+    <strong>Время:</strong> 1,5 минуты на подготовку + до 2 минут на непрерывное говорение. <br>
+    <strong>Жесткий лимит:</strong> строго <strong>10–12 предложений</strong>. Меньше или больше = 0 баллов за всё задание.
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Параметр</th>
+        <th>Значение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Номер задания в КИМ</td>
+        <td>Устная часть, Задание 3</td>
+    </tr>
+    <tr>
+        <td>Тип задания</td>
+        <td>Монологическое высказывание с вербальной опорой (план из 4 пунктов)</td>
+    </tr>
+    <tr>
+        <td>Объем</td>
+        <td>10–12 предложений</td>
+    </tr>
+    <tr>
+        <td>Условие</td>
+        <td>Непрерывность речи (без долгих пауз)</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">Максимальный первичный балл</td>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">7 баллов</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Критерии оценивания (официальные, адаптированные)</h2>
+
+<div class="criteria-card">
+    <h3>К1. Решение коммуникативной задачи (Содержание) <span class="points">макс. 2 балла</span></h3>
+    <ul>
+        <li><strong>2 балла:</strong> Раскрыты все 4 аспекта темы. Объем: 10–12 предложений. Речь непрерывна.</li>
+        <li><strong>1 балл:</strong> Не раскрыт 1 аспект, ИЛИ объем 9 или 13 предложений, ИЛИ есть небольшие паузы, нарушающие непрерывность.</li>
+        <li><strong>0 баллов:</strong> Не раскрыто 2 и более аспектов, ИЛИ объем менее 9 или более 13 предложений, ИЛИ речь прерывистая.</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>К2. Организация текста <span class="points">макс. 2 балла</span></h3>
+    <ul>
+        <li><strong>2 балла:</strong> Высказывание логично, использованы средства логической связи (<em>To begin with, Also, As for, In conclusion</em>), нет логических ошибок.</li>
+        <li><strong>1 балл:</strong> Есть 1–2 ошибки в логике или нехватка средств связи.</li>
+        <li><strong>0 баллов:</strong> 3 и более ошибок в организации, текст представляет собой набор несвязанных фраз.</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>К3. Лексико-грамматическое оформление <span class="points">макс. 2 балла</span></h3>
+    <ul>
+        <li><strong>2 балла:</strong> Словарный запас и грамматика соответствуют теме. Допущено не более <strong>4</strong> ошибок.</li>
+        <li><strong>1 балл:</strong> Допущено <strong>5–6</strong> ошибок.</li>
+        <li><strong>0 баллов:</strong> Допущено <strong>7 и более</strong> ошибок.</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>К4. Фонетическая сторона речи <span class="points">макс. 1 балл</span></h3>
+    <ul>
+        <li><strong>1 балл:</strong> Речь понятна, интонация и ударения в норме. Допущено не более <strong>2</strong> фонетических ошибок.</li>
+        <li><strong>0 баллов:</strong> Допущено <strong>3 и более</strong> фонетических ошибок, или речь неразборчива.</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ ПРАВИЛО НОКАУТА:</strong><br>
+    Если по критерию К1 (Содержание) выставлено <strong>0 баллов</strong>, то по ВСЕМ остальным критериям (К2, К3, К4) тоже автоматически выставляется <strong>0 баллов</strong>. <br>
+    <em>Например: ученик сказал 14 предложений. К1 = 0. Итог за всё задание = 0, даже если грамматика и произношение были идеальными.</em>
+</div>
+
+<h2>Как правильно считать предложения (очень важно!)</h2>
+
+<div class="info-box">
+    Эксперт считает предложения по знакам препинания (точка, восклицательный или вопросительный знак).
+    <ul style="margin-top: 10px; padding-left: 20px;">
+        <li>Сложное предложение с союзами <em>and, but, because, so</em> считается как <strong>ОДНО</strong> предложение. <br><em>(Пример: "I like football and my brother likes hockey." = 1 предложение).</em></li>
+        <li>Вводные конструкции считаются частью предложения. <br><em>(Пример: "In my opinion, sport is important." = 1 предложение).</em></li>
+        <li>Обращение или короткие реплики вроде "Well", "You know" отдельными предложениями обычно не считаются, если они присоединены запятой.</li>
+    </ul>
+</div>
+
+<h2>Готовые конструкции для монолога</h2>
+
+<div class="criteria-card">
+    <h3>Начало монолога (выберите одну фразу)</h3>
+    <ul>
+        <li>I would like to give a talk about...</li>
+        <li>I am going to talk about...</li>
+        <li>Today I would like to say a few words about...</li>
+        <li>The topic of my talk is...</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>Переход к первому пункту плана</h3>
+    <ul>
+        <li>To begin with, ...</li>
+        <li>First of all, ...</li>
+        <li>Let me start by saying that...</li>
+        <li>The first point I would like to mention is...</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>Переход ко второму и третьему пунктам плана</h3>
+    <ul>
+        <li>As for ..., ...</li>
+        <li>Regarding ..., I can say that...</li>
+        <li>Another important point is...</li>
+        <li>It is also worth mentioning that...</li>
+        <li>Speaking about ..., ...</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>Выражение мнения (для последнего пункта плана)</h3>
+    <ul>
+        <li>In my opinion, ...</li>
+        <li>From my point of view, ...</li>
+        <li>I believe that...</li>
+        <li>I think that...</li>
+        <li>As far as I am concerned, ...</li>
+        <li>Personally, I feel that...</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>Завершение монолога</h3>
+    <ul>
+        <li>In conclusion, I would like to say that...</li>
+        <li>To sum up, ...</li>
+        <li>That is all I wanted to say about...</li>
+        <li>Thank you for your attention.</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>Средства связи внутри пунктов (для перечисления и пояснения)</h3>
+    <ul>
+        <li><strong>Для примеров:</strong> For example, ... / For instance, ... / Such as...</li>
+        <li><strong>Для причин:</strong> Because... / Since... / As... / Due to the fact that...</li>
+        <li><strong>Для следствий:</strong> Therefore, ... / So, ... / As a result, ... / That is why...</li>
+        <li><strong>Для противопоставления:</strong> However, ... / On the other hand, ... / But...</li>
+        <li><strong>Для добавления:</strong> Also, ... / Moreover, ... / In addition, ... / Besides, ...</li>
+    </ul>
+</div>
+
+<h2>Пример идеального монолога на 11 предложений (тема "Sports")</h2>
+
+<div class="sample-text">
+    <p><span class="sentence-count">[1]</span> I would like to give a talk about sports in Russia.</p>
+
+    <p><span class="sentence-count">[2]</span> To begin with, many kinds of sport are popular in our country. <span class="sentence-count">[3]</span> For example, football and ice hockey are loved by millions of people. <span class="sentence-count">[4]</span> Figure skating and tennis are also very famous among Russians.</p>
+
+    <p><span class="sentence-count">[5]</span> People choose different kinds of sport for various reasons. <span class="sentence-count">[6]</span> Some do it to stay healthy and keep fit. <span class="sentence-count">[7]</span> Others want to become professional athletes and win medals.</p>
+
+    <p><span class="sentence-count">[8]</span> As for famous Russian sportsmen, I know Alexander Ovechkin. <span class="sentence-count">[9]</span> He is a legendary ice hockey player who has won many awards.</p>
+
+    <p><span class="sentence-count">[10]</span> In conclusion, my attitude to sport is very positive. <span class="sentence-count">[11]</span> I believe that doing sports regularly is the key to a long and happy life.</p>
+</div>
+
+<div class="info-box">
+    <strong>Разбор примера:</strong><br>
+    • Всего предложений: <strong>11</strong> (идеально попадает в диапазон 10–12).<br>
+    • <strong>Средства связи использованы:</strong> <em>To begin with, For example, As for, In conclusion</em>. Они гарантируют балл за К2.<br>
+    • Каждый из 4 пунктов плана раскрыт в отдельном микро-абзаце (логически).<br>
+    • Объем достаточный, но не избыточный — нет риска превысить лимит.
+</div>
+
+<div class="link-box">
+    📄 <strong>Официальный источник:</strong> Демонстрационный вариант ОГЭ 2025, Устная часть, Задание 3.<br><br>
+    🔗 <a href="https://oge.fipi.ru/" target="_blank">Открытый банк заданий ФИПИ (раздел "Говорение")</a>
+</div>
+
+</body>
+</html>

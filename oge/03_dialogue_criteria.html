@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ Устная часть — Задание 2: Диалог-расспрос</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e36;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f6fa;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            border-bottom: 2px solid #1a4535;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 4px;
+            border-bottom: 3px solid #1a4535;
+        }
+
+        h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: normal;
+            border-left: 4px solid #1a4535;
+            padding-left: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: #f9fffb;
+            border-radius: 0 4px 4px 0;
+        }
+
+        h3 {
+            font-family: 'Segoe UI', sans-serif;
+            color: #1a4535;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #c8dcd2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 15px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.08);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaf4f0;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1a4535;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: none;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8faf9;
+        }
+
+        tbody tr:hover {
+            background-color: #eef5f2;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #1a4535;
+        }
+
+        .criteria-card {
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            border-left: 4px solid #1a4535;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.05);
+        }
+
+        .criteria-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #1a4535;
+            font-size: 16px;
+        }
+
+        .criteria-card .points {
+            display: inline-block;
+            background-color: #1a4535;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .criteria-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .criteria-card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14.5px;
+            border-bottom: 1px solid #f4f9f7;
+        }
+
+        .criteria-card li:last-child {
+            border-bottom: none;
+        }
+
+        .criteria-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 8px;
+            color: #2c6e52;
+            font-weight: bold;
+        }
+
+        .criteria-card li strong {
+            color: #1a4535;
+        }
+
+        .info-box {
+            background-color: #f9fffb;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c6e52;
+            font-size: 15px;
+        }
+
+        .info-box strong {
+            color: #1a4535;
+        }
+
+        .warning-box {
+            background-color: #fdf6f0;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #c47a4a;
+            font-size: 15px;
+        }
+
+        .warning-box strong {
+            color: #8a4f22;
+        }
+
+        .dialogue-box {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+        }
+
+        .dialogue-line {
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+
+        .dialogue-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .speaker {
+            font-weight: 700;
+            color: #1a4535;
+            display: inline-block;
+            min-width: 180px;
+        }
+
+        .speaker.assistant {
+            color: #2c6e52;
+        }
+
+        .speaker.student {
+            color: #1a4535;
+        }
+
+        .response-text {
+            color: #2c3e36;
+        }
+
+        .link-box {
+            background-color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border: 1px dashed #2c6e52;
+            font-size: 15px;
+        }
+
+        .link-box a {
+            color: #2c6e52;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .link-box a:hover {
+            text-decoration: underline;
+            color: #1a4535;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ОГЭ Устная часть — Задание 2<br>«Диалог-расспрос с электронным ассистентом»</h1>
+
+<div class="info-box">
+    <strong>Краткое ТЗ:</strong> Ответить на 6 вопросов электронного ассистента по заданной теме (например, «Свободное время», «Школа», «Путешествия»).<br>
+    <strong>Время:</strong> 40 секунд на каждый ответ. Ассистент задает вопрос, звучит сигнал, у вас есть 40 секунд на запись ответа.<br>
+    <strong>Главное правило:</strong> Ответ должен быть <strong>полным предложением</strong> и точно соответствовать заданному вопросу.
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Параметр</th>
+        <th>Значение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Номер задания в КИМ</td>
+        <td>Устная часть, Задание 2</td>
+    </tr>
+    <tr>
+        <td>Количество вопросов</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Время на ответ</td>
+        <td>40 секунд на каждый вопрос</td>
+    </tr>
+    <tr>
+        <td>Уровень сложности</td>
+        <td>Базовый / Повышенный</td>
+    </tr>
+    <tr>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">Максимальный первичный балл</td>
+        <td style="font-weight: 700; color: #1a4535; font-size: 16px; border-top: 2px solid #1a4535;">6 баллов (по 1 баллу за каждый ответ)</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Пример идеального диалога</h2>
+
+<div class="dialogue-box">
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">How much free time do you have on week days?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">I usually have 2-3 hours of free time in the evening after I finish doing homework.</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">How do you and your friends usually spend your free time?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">My friends and I play football together.</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">Who do you prefer to spend your free time with?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">I prefer to spend free time with family and friends.</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">What afterschool activities do you take part in?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">I take part in playing football with my schoolmates.</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">Do you think everyone should find some time for doing sports? Why?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">In my opinion, every person should decide for himself whether he wants to do sport or not because we live in a society with a freedom of choice.</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker assistant">Electronic assistant:</span>
+        <span class="response-text">What hobby would you do if you had free time?</span>
+    </div>
+    <div class="dialogue-line">
+        <span class="speaker student">Student:</span>
+        <span class="response-text">I would start playing ice hockey.</span>
+    </div>
+</div>
+
+<div class="info-box">
+    <strong>Почему этот диалог получает 6/6:</strong><br>
+    1. Каждый ответ — это <strong>полное грамматически оформленное предложение</strong>.<br>
+    2. Ответы <strong>точно соответствуют вопросу</strong> (используются те же ключевые слова: <em>free time, take part in, prefer</em>).<br>
+    3. В последнем вопросе правильно использована грамматическая конструкция (<em>I would start...</em> для ответа на вопрос с <em>would</em>).
+</div>
+
+<h2>Что считается ошибкой, а что нет</h2>
+
+<div class="criteria-card">
+    <h3>❌ СЧИТАЕТСЯ ошибкой (0 баллов за ответ)</h3>
+    <ul>
+        <li><strong>Ответ одним словом или фразой:</strong> На вопрос <em>"How do you spend your free time?"</em> ответ <em>"Football"</em> или <em>"Playing football"</em> не принимается. Нужно: <em>"I spend my free time playing football."</em></li>
+        <li><strong>Игнорирование части вопроса:</strong> Если вопрос двойной (<em>"Do you like sports and why?"</em>), а ученик ответил только <em>"Yes, I do"</em>, не объяснив причину.</li>
+        <li><strong>Выдача заученного монолога:</strong> Если ученик начинает рассказывать о своем хобби, не отвечая на конкретный вопрос ассистента (например, его спросили о <em>week days</em>, а он говорит о <em>weekends</em>).</li>
+        <li><strong>Грубые грамматические ошибки, искажающие смысл:</strong> Неправильное время глагола, потеря подлежащего или сказуемого (например, <em>"Me playing football"</em> вместо <em>"I play football"</em>).</li>
+        <li><strong>Молчание или ответ на русском языке.</strong></li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>✅ НЕ считается ошибкой (балл сохраняется)</h3>
+    <ul>
+        <li><strong>Легкий акцент:</strong> Как и в первом задании, произношение с русским акцентом не штрафуется, если слово распознаваемо.</li>
+        <li><strong>Незначительные артиклевые ошибки:</strong> Если ученик сказал <em>"play the football"</em> вместо <em>"play football"</em>, но остальное предложение построено верно и смысл ясен, эксперт может не снизить балл (зависит от строгости, но это не "грубая" ошибка).</li>
+        <li><strong>Использование более простых синонимов:</strong> Если ученик забыл слово <em>leisure</em>, но сказал <em>free time</em> — это отлично и правильно.</li>
+        <li><strong>Мгновенное самоисправление:</strong> Если ученик оговорился, но сразу же, без долгой паузы, произнес фразу правильно (например, <em>"I goes... I go to the park"</em>), засчитывается правильный вариант.</li>
+    </ul>
+</div>
+
+<div class="warning-box">
+    <strong>⚠️ Важное предупреждение о времени:</strong><br>
+    У вас есть ровно <strong>40 секунд</strong>. Не нужно тараторить, чтобы сказать как можно больше. 2-3 четких, правильно построенных предложения лучше, чем 5 сбивчивых, в которых вы запутаетесь в временах. Как только вы ответили на вопрос, можно остановиться. Молчание в оставшееся время <strong>не штрафуется</strong>.
+</div>
+
+<div class="link-box">
+    📄 <strong>Официальный источник:</strong> Открытый банк заданий ФИПИ (раздел "Говорение", Задание 2).<br><br>
+    🔗 <a href="https://oge.fipi.ru/" target="_blank">https://oge.fipi.ru/</a>
+</div>
+
+</body>
+</html>
