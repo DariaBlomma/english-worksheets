@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОГЭ — Задание 35 «Электронное личное письмо»</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e36;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f4f6fa;
+        }
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            border-bottom: 2px solid #1a4535;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-radius: 4px;
+            border-bottom: 3px solid #1a4535;
+        }
+
+        h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #1a4535;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: normal;
+            border-left: 4px solid #1a4535;
+            padding-left: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: #f9fffb;
+            border-radius: 0 4px 4px 0;
+        }
+
+        h3 {
+            font-family: 'Segoe UI', sans-serif;
+            color: #1a4535;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #c8dcd2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 15px;
+            background-color: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.08);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaf4f0;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1a4535;
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: none;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f8faf9;
+        }
+
+        tbody tr:hover {
+            background-color: #eef5f2;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #1a4535;
+        }
+
+        .criteria-card {
+            background-color: #ffffff;
+            padding: 20px 25px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            border-left: 4px solid #1a4535;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.05);
+        }
+
+        .criteria-card h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #1a4535;
+            font-size: 16px;
+        }
+
+        .criteria-card .points {
+            display: inline-block;
+            background-color: #1a4535;
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .criteria-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .criteria-card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14.5px;
+            border-bottom: 1px solid #f4f9f7;
+        }
+
+        .criteria-card li:last-child {
+            border-bottom: none;
+        }
+
+        .criteria-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 8px;
+            color: #2c6e52;
+            font-weight: bold;
+        }
+
+        .criteria-card li strong {
+            color: #1a4535;
+        }
+
+        .task-block {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border: 1px solid #d0e6dc;
+            border-left: 5px solid #1a4535;
+            box-shadow: 0 1px 3px rgba(26, 69, 53, 0.05);
+        }
+
+        .task-block h3 {
+            margin-top: 0;
+            border-bottom: none;
+            color: #1a4535;
+            font-size: 16px;
+        }
+
+        .email-stimulus {
+            background-color: #f4f9f7;
+            padding: 18px 22px;
+            border-radius: 4px;
+            border-left: 3px solid #2c6e52;
+            margin: 15px 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .email-stimulus .header {
+            color: #1a4535;
+            font-size: 13px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .email-stimulus .body {
+            font-style: italic;
+            color: #444;
+        }
+
+        .email-stimulus .questions {
+            font-weight: 600;
+            color: #1a4535;
+            font-style: normal;
+        }
+
+        .email-stimulus .instruction {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #2c6e52;
+            font-style: normal;
+            font-size: 14px;
+        }
+
+        .sample-letter {
+            background-color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #d0e6dc;
+            font-family: 'Georgia', serif;
+            font-size: 15px;
+            line-height: 1.9;
+            color: #2c3e36;
+        }
+
+        .sample-letter p {
+            margin: 0 0 12px 0;
+        }
+
+        .word-count {
+            background-color: #f9fffb;
+            padding: 15px 20px;
+            border-radius: 4px;
+            border-left: 4px solid #2c6e52;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .word-count strong {
+            color: #1a4535;
+        }
+
+        .word-count .total {
+            display: inline-block;
+            background-color: #1a4535;
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .info-box {
+            background-color: #f9fffb;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2c6e52;
+            font-size: 15px;
+        }
+
+        .info-box strong {
+            color: #1a4535;
+        }
+
+        .warning-box {
+            background-color: #fdf6f0;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            border-left: 4px solid #c47a4a;
+            font-size: 15px;
+        }
+
+        .warning-box strong {
+            color: #8a4f22;
+        }
+
+        .link-box {
+            background-color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 4px;
+            margin: 25px 0;
+            border: 1px dashed #2c6e52;
+            font-size: 15px;
+        }
+
+        .link-box a {
+            color: #2c6e52;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .link-box a:hover {
+            text-decoration: underline;
+            color: #1a4535;
+        }
+
+        .summary-table td:first-child {
+            font-weight: 600;
+            color: #1a4535;
+            width: 55%;
+        }
+
+        .summary-table td:last-child {
+            text-align: center;
+            font-weight: 600;
+            color: #2c6e52;
+            width: 20%;
+        }
+
+        .summary-table .total-row {
+            background-color: #f9fffb;
+            font-weight: 700;
+        }
+
+        .summary-table .total-row td {
+            color: #1a4535;
+            font-size: 16px;
+            border-top: 2px solid #1a4535;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ОГЭ по английскому языку — Задание 35<br>«Электронное личное письмо»</h1>
+
+<div class="info-box">
+    <strong>Краткое ТЗ:</strong> написать ответное электронное письмо англоязычному другу по переписке, ответив на <strong>3 вопроса</strong> из его письма-стимула. Соблюдать неофициальный стиль, структуру письма и лимит по словам.
+</div>
+
+<table class="summary-table">
+    <thead>
+    <tr>
+        <th>Параметр</th>
+        <th>Значение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Номер задания в КИМ</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Тип задания</td>
+        <td>РО (развёрнутый ответ)</td>
+    </tr>
+    <tr>
+        <td>Раздел экзамена</td>
+        <td>Письменная речь (Письмо)</td>
+    </tr>
+    <tr>
+        <td>Требуемый объём</td>
+        <td>100–120 слов</td>
+    </tr>
+    <tr>
+        <td>Допустимый диапазон (для проверки)</td>
+        <td>90–132 слова</td>
+    </tr>
+    <tr>
+        <td>Уровень сложности</td>
+        <td>Повышенный</td>
+    </tr>
+    <tr>
+        <td>Время на выполнение (рекомендуемое)</td>
+        <td>20–25 минут</td>
+    </tr>
+    <tr class="total-row">
+        <td>Максимальный первичный балл</td>
+        <td>10 баллов</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Критерии оценивания</h2>
+
+<p>Письмо оценивается по <strong>4 критериям</strong>. Проверка начинается с подсчёта количества слов. Если объём менее 90 слов — работа автоматически получает <strong>0 баллов</strong> по всем критериям.</p>
+
+<div class="warning-box">
+    <strong>⚠️ Важное правило:</strong> если по критерию К1 («Решение коммуникативной задачи») выставлено <strong>0 баллов</strong>, то по всем остальным критериям (К2, К3, К4) тоже выставляется <strong>0 баллов</strong>, вне зависимости от качества работы.
+</div>
+
+<div class="criteria-card">
+    <h3>К1. Решение коммуникативной задачи (Содержание) <span class="points">макс. 3 балла</span></h3>
+    <p>Проверяется по <strong>5 аспектам</strong>. Каждый должен быть выполнен:</p>
+    <ul>
+        <li><strong>Аспект 1.</strong> Полный и точный ответ на вопрос 1 друга.</li>
+        <li><strong>Аспект 2.</strong> Полный и точный ответ на вопрос 2 друга.</li>
+        <li><strong>Аспект 3.</strong> Полный и точный ответ на вопрос 3 друга.</li>
+        <li><strong>Аспект 4.</strong> Соблюдение норм вежливости: наличие <strong>обоих</strong> элементов — (1) благодарность за письмо / радость от его получения <strong>и</strong> (2) надежда на будущие контакты.</li>
+        <li><strong>Аспект 5.</strong> Стилевое оформление: обращение, завершающая фраза и подпись (<strong>только имя</strong>, без фамилии) в неофициальном стиле.</li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 14px;">
+        <strong>3 балла:</strong> все аспекты раскрыты (допускается 1 неполный/неточный).<br>
+        <strong>2 балла:</strong> 1 аспект не раскрыт, ИЛИ 2–3 аспекта раскрыты неполно/неточно.<br>
+        <strong>1 балл:</strong> 2 аспекта не раскрыты, ИЛИ 4 аспекта раскрыты неполно/неточно.<br>
+        <strong>0 баллов:</strong> все остальные случаи.
+    </p>
+</div>
+
+<div class="criteria-card">
+    <h3>К2. Организация текста <span class="points">макс. 2 балла</span></h3>
+    <p>Проверяется:</p>
+    <ul>
+        <li>Логичность изложения и деление текста на <strong>абзацы</strong>.</li>
+        <li>Использование <strong>средств логической связи</strong> (<em>well, as for me, finally, by the way</em> и т.п.).</li>
+        <li>Обращение, завершающая фраза и подпись написаны <strong>каждые с новой строки</strong>.</li>
+    </ul>
+    <p style="margin-top: 15px; font-size: 14px;">
+        <strong>2 балла:</strong> текст логичен, абзацы выделены, средства связи использованы верно (допускается 1 ошибка в организации).<br>
+        <strong>1 балл:</strong> 2–3 ошибки в организации текста.<br>
+        <strong>0 баллов:</strong> 4 и более ошибок.
+    </p>
+</div>
+
+<div class="criteria-card">
+    <h3>К3. Лексико-грамматическое оформление <span class="points">макс. 3 балла</span></h3>
+    <p>Оценивается соответствие лексики и грамматики уровню задания (A2):</p>
+    <ul>
+        <li><strong>3 балла:</strong> допущена не более <strong>1</strong> лексико-грамматической ошибки.</li>
+        <li><strong>2 балла:</strong> <strong>2–3</strong> лексико-грамматические ошибки.</li>
+        <li><strong>1 балл:</strong> <strong>4</strong> лексико-грамматические ошибки.</li>
+        <li><strong>0 баллов:</strong> <strong>5 и более</strong> ошибок.</li>
+    </ul>
+</div>
+
+<div class="criteria-card">
+    <h3>К4. Орфография и пунктуация <span class="points">макс. 2 балла</span></h3>
+    <ul>
+        <li><strong>2 балла:</strong> ошибок практически нет (допускается до <strong>2</strong> ошибок).</li>
+        <li><strong>1 балл:</strong> <strong>3–4</strong> орфографические или пунктуационные ошибки.</li>
+        <li><strong>0 баллов:</strong> <strong>5 и более</strong> ошибок.</li>
+    </ul>
+</div>
+
+<h2>Правила подсчёта слов</h2>
+
+<div class="info-box">
+    Считаются <strong>все слова</strong> — с первого до последнего, включая обращение и подпись, вспомогательные глаголы, предлоги, артикли и частицы.
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Элемент</th>
+        <th>Как считается</th>
+        <th>Пример</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Стяжённые формы</td>
+        <td>1 слово</td>
+        <td><em>I've, don't, wasn't, it's</em></td>
+    </tr>
+    <tr>
+        <td>Числительные цифрами</td>
+        <td>1 слово</td>
+        <td><em>5, 2025, 123</em></td>
+    </tr>
+    <tr>
+        <td>Числительные словами</td>
+        <td>По количеству слов</td>
+        <td><em>twenty-five</em> = 1 слово (с дефисом)</td>
+    </tr>
+    <tr>
+        <td>Сложные слова с дефисом</td>
+        <td>1 слово</td>
+        <td><em>English-speaking, pop-singer</em></td>
+    </tr>
+    <tr>
+        <td>Сокращения</td>
+        <td>1 слово</td>
+        <td><em>UK, TV, e-mail</em></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="warning-box">
+    <strong>Критические границы объёма:</strong><br>
+    • Менее <strong>90 слов</strong> → работа <strong>не проверяется</strong>, автоматически <strong>0 баллов</strong>.<br>
+    • Более <strong>132 слов</strong> → эксперт проверяет <strong>только первые 120 слов</strong>. Если в них не хватает ответов на вопросы или нарушена структура — баллы снижаются.
+</div>
+
+<h2>Пример задания</h2>
+
+<div class="task-block">
+    <h3>Письмо-стимул (задание для участника экзамена)</h3>
+    <div class="email-stimulus">
+        <div class="header">
+            From: <strong>Tom@mail.uk</strong><br>
+            To: <strong>Russian_friend@oge.ru</strong><br>
+            Subject: <strong>Hobbies</strong>
+        </div>
+        <div class="body">
+            ...I have just joined a photography club at school. It's great! We meet twice a week and learn how to take beautiful pictures. I've already taken some amazing photos of our city...
+        </div>
+        <div class="questions">
+            ...What do you usually do in your free time? Do you have any hobbies? What is your favourite school subject and why?...
+        </div>
+        <div class="instruction">
+            Write a message to Tom and answer his <strong>3</strong> questions.<br>
+            Write <strong>100–120 words</strong>.<br>
+            Remember the rules of email writing.
+        </div>
+    </div>
+</div>
+
+<h2>Пример ответа (работа на 10 баллов)</h2>
+
+<div class="sample-letter">
+    <p>Dear Tom,</p>
+
+    <p>Thanks for your recent email. I was really glad to hear from you again. Your photography club sounds amazing!</p>
+
+    <p>In your email you asked me about my free time. Well, I usually spend it with my friends. We often go for a walk in the park or play football. As for my hobbies, I am really into drawing and I attend an art studio twice a week. Finally, my favourite school subject is English because it is very useful and helps me dream about travelling.</p>
+
+    <p>Anyway, I have to go now to do my homework.</p>
+
+    <p>Write back soon.</p>
+
+    <p>Best wishes,<br>
+        Sasha</p>
+</div>
+
+<div class="word-count">
+    <strong>Подсчёт слов:</strong><br>
+    • Обращение (<em>Dear Tom</em>) — 2 слова<br>
+    • Первый абзац — 16 слов<br>
+    • Второй абзац (ответы на 3 вопроса) — 58 слов<br>
+    • Третий абзац (причина завершения) — 9 слов<br>
+    • Четвёртый абзац (надежда на контакты) — 4 слова<br>
+    • Завершающая фраза + подпись (<em>Best wishes, Sasha</em>) — 3 слова<br><br>
+    <strong>Итого:</strong> <span class="total">92 слова</span> — объём соответствует требуемому (90–132).
+</div>
+
+<h3>Разбор по критериям</h3>
+
+<table>
+    <thead>
+    <tr>
+        <th width="35%">Критерий</th>
+        <th width="45%">Что проверено</th>
+        <th width="20%">Балл</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><strong>К1.</strong> Решение коммуникативной задачи</td>
+        <td>Все 5 аспектов раскрыты: 3 ответа на вопросы даны, благодарность и надежда на контакты есть, стиль неофициальный, обращение и подпись в правильной форме.</td>
+        <td><strong>3 / 3</strong></td>
+    </tr>
+    <tr>
+        <td><strong>К2.</strong> Организация текста</td>
+        <td>Текст логичен, разделён на абзацы, использованы средства связи (<em>Well, As for my hobbies, Finally, Anyway</em>), обращение/завершающая фраза/подпись — каждое с новой строки. Ошибок нет.</td>
+        <td><strong>2 / 2</strong></td>
+    </tr>
+    <tr>
+        <td><strong>К3.</strong> Лексико-грамматическое оформление</td>
+        <td>Лексика и грамматика соответствуют уровню A2. Ошибок нет.</td>
+        <td><strong>3 / 3</strong></td>
+    </tr>
+    <tr>
+        <td><strong>К4.</strong> Орфография и пунктуация</td>
+        <td>Ошибок нет. Запятые после обращения и завершающей фразы стоят верно.</td>
+        <td><strong>2 / 2</strong></td>
+    </tr>
+    <tr class="total-row">
+        <td colspan="2"><strong>ИТОГО</strong></td>
+        <td><strong>10 / 10</strong></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Официальный документ</h2>
+
+<div class="link-box">
+    📄 <strong>Источник:</strong> Методические материалы ФИПИ для предметных комиссий ОГЭ 2025. Английский язык (письменная часть).<br><br>
+    🔗 <a href="https://doc.fipi.ru/oge/dlya-predmetnyh-komissiy-subektov-rf/2025/mr_oge_angl_pism_2025.pdf" target="_blank">https://doc.fipi.ru/oge/dlya-predmetnyh-komissiy-subektov-rf/2025/mr_oge_angl_pism_2025.pdf</a><br><br>
+    <em>Критерии оценивания задания 35 — см. стр. 96–99, Приложения 1 и 2.</em>
+</div>
+
+</body>
+</html>
